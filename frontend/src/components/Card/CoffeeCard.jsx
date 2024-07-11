@@ -8,7 +8,7 @@ function BakeryCard() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const API_URL = "https://coffee-sandy-gamma.vercel.app/";
+  const API_URL = "https://coffee-lilac.vercel.app/";
 
   const navigate = useNavigate();
 
