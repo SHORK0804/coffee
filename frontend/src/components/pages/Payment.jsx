@@ -31,7 +31,7 @@ function Payment() {
 
   const placeOrder = async (data) => {
     try {
-      const response = await fetch('https://api-beta-wheat.vercel.app/api/v1/orders', {
+      const response = await fetch("https://coffee-sandy-gamma.vercel.app/api/v1/orders", {
         method: 'POST',
         body: JSON.stringify({
           productname: productName,
