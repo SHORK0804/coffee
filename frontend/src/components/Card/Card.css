@@ -1,0 +1,31 @@
+.container:hover {
+    cursor: pointer;
+}
+
+.container .card-img-top {
+    border-radius: 25px;
+    padding-top: 10px;
+    transition: all 0.3s ease-out;
+}
+
+.container .card-body .card-title {
+    margin-bottom: 20px;
+    margin-top: 30px;
+    transition: all 0.5s;
+}
+
+.container .card-img-top:hover {
+    transform: scale(1.05);
+}
+
+.container .card-body .card-title:hover {
+    cursor: pointer;
+    color: orange;
+}
+
+@media screen and (max-width: 768px) {
+    .card-img-top {
+        width: 100px;
+        height: 100px;
+    }
+}

@@ -1,0 +1,61 @@
+.progress_wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.progress_bar {
+  position: absolute;
+  top: 59px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: orange;
+}
+
+.hidden {
+  display: none;
+}
+
+.showButton {
+  position: fixed;
+  background-color: orange;
+  border-radius: 50%;
+  padding: 0.25rem;
+  right: -100px;
+  bottom: 50px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+  transform: translateX(-160px);
+  animation: slideLeft 1s;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100px);
+  }
+
+  100% {
+    transform: translateX(-160px);
+  }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .progress_bar {
+    top: 0px;
+  }
+
+  @keyframes slideLeft {
+    0% {
+      transform: translateX(-60px);
+    }
+  
+    100% {
+      transform: translateX(-100px);
+    }
+  }
+}
