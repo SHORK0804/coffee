@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import styles from './style.module.css';
 import { useForm } from 'react-hook-form';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 function Payment() {
   const location = useLocation();
@@ -27,26 +28,20 @@ function Payment() {
 
   const borderStyle = {
     border: '1px solid gray',
-  }
+  };
 
   const placeOrder = async (data) => {
     try {
-      const response = await fetch("https://coffee-sandy-gamma.vercel.app/api/v1/orders", {
-        method: 'POST',
-        body: JSON.stringify({
-          productname: productName,
-          productprice: String((productPrice * productQuantity)/1000) + ".000 đ",
-          quantity: productQuantity,
-          name: data.customername,
-          phone: data.phone,
-          address: data.address,
-        }),
-        headers: {
-          'Content-type': 'application/json',
-        },
+      const response = await axios.post("https://coffee-lilac.vercel.app/api/v1/orders", {
+        productname: productName,
+        productprice: String(productPrice * productQuantity) + " đ",
+        quantity: productQuantity,
+        name: data.customername,
+        phone: data.phone,
+        address: data.address,
       });
 
-      if (response.ok) {
+      if (response.status === 200 || response.status === 201) {
         console.log('Order placed successfully!');
         navigate('/');
       } else {
@@ -56,8 +51,6 @@ function Payment() {
       console.error('Error placing order:', error);
     }
   };
-
-
 
   return (
     <form className={styles.showform} onSubmit={handleSubmit(placeOrder)}>
