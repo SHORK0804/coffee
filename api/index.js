@@ -12,7 +12,7 @@ const app = express();
 //   origin: process.env.ORIGIN, 
 // };
 
-//app.use(cors(corsConfig)); 
+app.use(cors()); 
 app.use(express.json()); 
 
 const connectDB = require("./connectMongo");
